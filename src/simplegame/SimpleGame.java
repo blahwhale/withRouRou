@@ -63,21 +63,17 @@ public class SimpleGame {
 	 */
 	public int digitsSum(int input){
 		// TODO: Your code goes here
-		if (input < 10){
-			System.out.println(input);
-			return input;
-		} else {
-			//divide the input by 10 and add the remainder to the sum until input becomes single digit
-			int tot = input;
-			int sum = 0;
-			while (tot > 10){
-				sum += tot % 10;
-				tot = tot / 10;
-			}
-			sum +=tot;
-			System.out.println(sum);
-			return sum;
+		
+		//divide the input by 10 and add the remainder to the sum until input becomes single digit
+		int tot = input;
+		int sum = 0;
+		while (tot > 10){
+			sum += tot % 10;
+			tot = tot / 10;
 		}
+		sum +=tot;
+		System.out.println(sum);
+		return sum;
 	}
 	
 	public static void main(String[] args) {
@@ -97,12 +93,12 @@ public class SimpleGame {
 			System.out.println("please type the number of seconds (in integer) to convert to time");
 			int seconds = sc.nextInt();
 			game.convertTime(seconds);
-			} else {
+		} else {
 			// If the user enters 2, ask for an integer and call the digitsSum method.
 			System.out.println("please type the integer to be summed");
 			int input = sc.nextInt();
 			game.digitsSum(input);
-			}
+		}
 		
 		sc.close();
 	}	
